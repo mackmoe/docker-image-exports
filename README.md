@@ -1,9 +1,15 @@
 Portin docker containers like a boss
 ```
 mackmoe in ~/git-repos/docker-image-exports on master λ ll
-total 798M
-drw-rw-r-- 1 mackmoe mackmoe  256 Sep  9 01:48 docker-compose-scripts
--rw-rw-r-- 1 mackmoe mackmoe  37M Sep  8 00:48 gitea-docker-img.tar.gz
--rw-rw-r-- 1 mackmoe mackmoe  38M Sep  7 20:57 hastebin-docker-img.tar.gz
--rw-rw-r-- 1 mackmoe mackmoe  395 Sep  8 00:42 README.md
+total 16
+drwxrwxr-x 5 mackmoe mackmoe 4096 Sep  9 16:30 docker-compose-scripts
+-rw-rw-r-- 1 mackmoe mackmoe  133 Sep  9 16:24 gitea-docker-img.tar.gz
+-rw-rw-r-- 1 mackmoe mackmoe  133 Sep  9 16:24 hastebin-docker-img.tar.gz
+-rw-rw-r-- 1 mackmoe mackmoe  388 Sep  9 16:24 README.md
+
+mackmoe in ~/git-repos/docker-image-exports on master λ ll docker-compose-scripts
+total 12
+drwxrwxr-x 2 mackmoe mackmoe 4096 Sep  9 16:24 gitea
+drwxrwxr-x 3 mackmoe mackmoe 4096 Sep  9 16:24 hastebin
+drwxrwxr-x 7 mackmoe mackmoe 4096 Sep  9 16:31 mattermost
 ```
