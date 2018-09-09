@@ -1,15 +1,9 @@
-Portin docker containers like a boss
-```
-mackmoe in ~/git-repos/docker-image-exports on master λ ll
-total 16
-drwxrwxr-x 5 mackmoe mackmoe 4096 Sep  9 16:30 docker-compose-scripts
--rw-rw-r-- 1 mackmoe mackmoe  133 Sep  9 16:24 gitea-docker-img.tar.gz
--rw-rw-r-- 1 mackmoe mackmoe  133 Sep  9 16:24 hastebin-docker-img.tar.gz
--rw-rw-r-- 1 mackmoe mackmoe  388 Sep  9 16:24 README.md
+#Portin docker containers like a boss!
+The docker composr scripts need the images in order to run.
+Download the docker image .tar.gz files and extract them.
+Once they are extracted, import them into docker images.
+From there, they can be used by the docker compose scripts to build app stacks within containers.
 
-mackmoe in ~/git-repos/docker-image-exports on master λ ll docker-compose-scripts
-total 12
-drwxrwxr-x 2 mackmoe mackmoe 4096 Sep  9 16:24 gitea
-drwxrwxr-x 3 mackmoe mackmoe 4096 Sep  9 16:24 hastebin
-drwxrwxr-x 7 mackmoe mackmoe 4096 Sep  9 16:31 mattermost
-```
+Note
+---
+Read the README.md in each of the docker compose app dirs so you know how to run the apps
