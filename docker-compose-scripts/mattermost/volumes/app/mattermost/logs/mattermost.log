@@ -1,0 +1,55 @@
+{"level":"info","ts":1536527395.5322404,"caller":"utils/i18n.go:83","msg":"Loaded system translations for 'en' from '/mattermost/i18n/en.json'"}
+{"level":"info","ts":1536527395.5323367,"caller":"app/app.go:195","msg":"Server is initializing..."}
+{"level":"info","ts":1536527395.533829,"caller":"sqlstore/supplier.go:200","msg":"Pinging SQL master database"}
+{"level":"info","ts":1536527395.6230242,"caller":"sqlstore/upgrade.go:95","msg":"The database schema has been set to version 5.2.0"}
+{"level":"error","ts":1536527395.7571633,"caller":"commands/server.go:78","msg":"SiteURL must be set. Some features will operate incorrectly if the SiteURL is not set. See documentation for details: http://about.mattermost.com/default-site-url"}
+{"level":"info","ts":1536527395.7571945,"caller":"commands/server.go:81","msg":"Current version is 5.2.0 (5.2.1/Thu Aug 23 17:03:54 UTC 2018/d2945cdd77bdf1ee03367a0d45624094fb936c19/none)"}
+{"level":"info","ts":1536527395.7572012,"caller":"commands/server.go:82","msg":"Enterprise Enabled: false"}
+{"level":"info","ts":1536527395.757206,"caller":"commands/server.go:83","msg":"Current working directory is /mattermost"}
+{"level":"info","ts":1536527395.7572415,"caller":"commands/server.go:84","msg":"Loaded config file from /mattermost/config/config.json"}
+{"level":"info","ts":1536527395.7573264,"caller":"utils/file_backend_local.go:32","msg":"Able to write files to local storage."}
+{"level":"info","ts":1536527395.757817,"caller":"app/app.go:560","msg":"Migrating roles to database."}
+{"level":"info","ts":1536527395.7738907,"caller":"sqlstore/post_store.go:1261","msg":"Post.Message supports at most 16383 characters (65535 bytes)"}
+{"level":"info","ts":1536527395.7957268,"caller":"app/app.go:636","msg":"Migrating emojis config to database."}
+{"level":"info","ts":1536527395.7983778,"caller":"app/plugin.go:100","msg":"Starting up plugins"}
+{"level":"info","ts":1536527396.1961048,"caller":"app/server.go:88","msg":"Starting Server..."}
+{"level":"info","ts":1536527396.1961284,"caller":"app/server.go:114","msg":"RateLimiter is enabled"}
+{"level":"info","ts":1536527396.19621,"caller":"app/server.go:148","msg":"Server is listening on [::]:8000"}
+{"level":"info","ts":1536527396.20133,"caller":"app/web_hub.go:75","msg":"Starting 8 websocket hubs"}
+{"level":"info","ts":1536527396.2247736,"caller":"jobs/workers.go:62","msg":"Starting workers"}
+{"level":"info","ts":1536527396.2249947,"caller":"jobs/schedulers.go:68","msg":"Starting schedulers."}
+{"level":"info","ts":1536527403.056579,"caller":"web/handlers.go:95","msg":"Invalid session","error":"GetSession: Invalid session token=nhge7hrn3p8y9prj9mwo486k4o, err=<no value>, "}
+{"level":"info","ts":1536527403.0601265,"caller":"web/handlers.go:95","msg":"Invalid session","error":"GetSession: Invalid session token=nhge7hrn3p8y9prj9mwo486k4o, err=<no value>, "}
+{"level":"info","ts":1536527403.0666304,"caller":"web/handlers.go:95","msg":"Invalid session","error":"GetSession: Invalid session token=nhge7hrn3p8y9prj9mwo486k4o, err=<no value>, "}
+{"level":"info","ts":1536527517.377161,"caller":"migrations/worker.go:109","msg":"Worker: Job is complete","worker":"Migrations","job_id":"qqszfnr7upnh3kwr4h31kkdf9e"}
+{"level":"info","ts":1536527525.368652,"caller":"jobs/schedulers.go:136","msg":"Stopping schedulers."}
+{"level":"info","ts":1536527525.3687134,"caller":"jobs/schedulers.go:71","msg":"Schedulers stopped."}
+{"level":"info","ts":1536527525.3687365,"caller":"jobs/workers.go:170","msg":"Stopped workers"}
+{"level":"info","ts":1536527525.3687453,"caller":"app/app.go:264","msg":"Stopping Server..."}
+{"level":"info","ts":1536527525.3688366,"caller":"app/web_hub.go:120","msg":"stopping websocket hub connections"}
+{"level":"error","ts":1536527525.371281,"caller":"app/status.go:312","msg":"Failed to save status for user_id=jfus4e586tn78k4mc38amr4ihc, err=SqlStatusStore.SaveOrUpdate: Encountered an error saving the status, dial tcp 192.168.64.3:5432: connect: connection refused"}
+{"level":"info","ts":1536527525.3713324,"caller":"app/plugin.go:156","msg":"Shutting down plugins"}
+{"level":"info","ts":1536527525.3713472,"caller":"sqlstore/supplier.go:797","msg":"Closing SqlStore"}
+{"level":"info","ts":1536527525.3718581,"caller":"app/app.go:285","msg":"Server stopped"}
+{"level":"info","ts":1536527527.0934067,"caller":"utils/i18n.go:83","msg":"Loaded system translations for 'en' from '/mattermost/i18n/en.json'"}
+{"level":"info","ts":1536527527.093499,"caller":"app/app.go:195","msg":"Server is initializing..."}
+{"level":"info","ts":1536527527.0951848,"caller":"sqlstore/supplier.go:200","msg":"Pinging SQL master database"}
+{"level":"info","ts":1536527527.1355326,"caller":"commands/server.go:81","msg":"Current version is 5.2.0 (5.2.1/Thu Aug 23 17:03:54 UTC 2018/d2945cdd77bdf1ee03367a0d45624094fb936c19/none)"}
+{"level":"info","ts":1536527527.1355581,"caller":"commands/server.go:82","msg":"Enterprise Enabled: false"}
+{"level":"info","ts":1536527527.135564,"caller":"commands/server.go:83","msg":"Current working directory is /mattermost"}
+{"level":"info","ts":1536527527.1355965,"caller":"commands/server.go:84","msg":"Loaded config file from /mattermost/config/config.json"}
+{"level":"info","ts":1536527527.1356719,"caller":"utils/file_backend_local.go:32","msg":"Able to write files to local storage."}
+{"level":"info","ts":1536527527.136309,"caller":"app/plugin.go:100","msg":"Starting up plugins"}
+{"level":"info","ts":1536527527.5365486,"caller":"app/server.go:88","msg":"Starting Server..."}
+{"level":"info","ts":1536527527.5365732,"caller":"app/server.go:114","msg":"RateLimiter is enabled"}
+{"level":"info","ts":1536527527.5366836,"caller":"app/server.go:148","msg":"Server is listening on [::]:8000"}
+{"level":"info","ts":1536527527.5426774,"caller":"app/web_hub.go:75","msg":"Starting 8 websocket hubs"}
+{"level":"info","ts":1536527527.55802,"caller":"sqlstore/post_store.go:1261","msg":"Post.Message supports at most 16383 characters (65535 bytes)"}
+{"level":"info","ts":1536527527.5791411,"caller":"jobs/workers.go:62","msg":"Starting workers"}
+{"level":"info","ts":1536527527.579437,"caller":"jobs/schedulers.go:68","msg":"Starting schedulers."}
+{"level":"error","ts":1536527713.4350226,"caller":"web/context.go:60","msg":"We couldn't find an existing account matching your credentials. This team may require an invite from the team owner to join.","path":"/api/v4/users/login","request_id":"kti8fmdqwfnadqzeetttw95zwy","ip_addr":"192.168.1.106","user_id":"","method":"POST","err_where":"GetUserForLogin","http_code":400,"err_details":""}
+{"level":"error","ts":1536527846.7880678,"caller":"web/context.go:60","msg":"Invalid or missing file_id parameter in request URL","path":"/api/v4/files/undefined","request_id":"3rhf316jr7ykin1rbqhmxm4d1r","ip_addr":"192.168.1.106","user_id":"381pnxc3c38wxbbr9twfqbf86y","method":"GET","err_where":"Context","http_code":400,"err_details":""}
+{"level":"error","ts":1536528006.5174992,"caller":"web/context.go:60","msg":"We couldn't find an existing account matching your credentials. This team may require an invite from the team owner to join.","path":"/api/v4/users/login","request_id":"r7c8skqiopbk7d8u9bjo118j3o","ip_addr":"192.168.1.106","user_id":"","method":"POST","err_where":"GetUserForLogin","http_code":400,"err_details":""}
+{"level":"error","ts":1536528009.9060552,"caller":"web/context.go:60","msg":"We couldn't find an existing account matching your credentials. This team may require an invite from the team owner to join.","path":"/api/v4/users/login","request_id":"t4kdr3u37bdzzbscxm6fjbgnbr","ip_addr":"192.168.1.106","user_id":"","method":"POST","err_where":"GetUserForLogin","http_code":400,"err_details":""}
+{"level":"error","ts":1536528019.5760844,"caller":"web/context.go:60","msg":"We couldn't find an existing account matching your credentials. This team may require an invite from the team owner to join.","path":"/api/v4/users/login","request_id":"deepsui6g7yhzmuqodkpf8jczh","ip_addr":"192.168.1.106","user_id":"","method":"POST","err_where":"GetUserForLogin","http_code":400,"err_details":""}
+{"level":"error","ts":1536528022.6874955,"caller":"web/context.go:60","msg":"We couldn't find an existing account matching your credentials. This team may require an invite from the team owner to join.","path":"/api/v4/users/login","request_id":"fdt4ii6xafyw5bcbxn4j1m55oo","ip_addr":"192.168.1.106","user_id":"","method":"POST","err_where":"GetUserForLogin","http_code":400,"err_details":""}
