@@ -1,3 +1,11 @@
+# How 2 run with docker
+If you want to startup a docker container with everything already setup an ititial config, just run
+```
+docker-compose --project-name gitea-app-test -f docker-compose.yml up -d
+```
+Once everything is configured you can just continue using it like normal, even if it's stopped and restarted.
+If you stop the container -or- if you're in a scenario where the host is rebooted, you can run the same cmd and everything should be just the way it was before the stop or reboot occoured.
+
 # Hastebin
 
 ![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/microbadger/image-size/angristan/hastebin.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/microbadger/layers/angristan/hastebin.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/docker/pulls/angristan/hastebin.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/docker/stars/angristan/hastebin.svg?maxAge=3600&style=flat-square)
