@@ -1,7 +1,7 @@
 # How 2 run with docker
 If you want to startup a docker container with everything already setup an ititial config, just run
 ```
-docker-compose --project-name gitea-app-test -f docker-compose.yml up -d
+docker-compose --project-name gitea-app -f docker-compose.yml up -d
 ```
 Once everything is configured you can just continue using it like normal, even if it's stopped and restarted.
 If you stop the container -or- if you're in a scenario where the host is rebooted, you can run the same cmd and everything should be just the way it was before the stop or reboot occoured.
