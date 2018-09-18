@@ -1,102 +1,54 @@
-# How 2 run with docker
-If you want to startup a docker container with everything already setup an ititial config, just run
-```
-docker-compose --project-name hastebin-app -f docker-compose.yml up -d
-```
-Once everything is configured you can just continue using it like normal, even if it's stopped and restarted.
-If you stop the container -or- if you're in a scenario where the host is rebooted, you can run the same cmd and everything should be just the way it was before the stop or reboot occoured.
-
 # Hastebin
 
-![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/microbadger/image-size/angristan/hastebin.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/microbadger/layers/angristan/hastebin.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/docker/pulls/angristan/hastebin.svg?maxAge=3600&style=flat-square) ![https://hub.docker.com/r/angristan/hastebin/](https://img.shields.io/docker/stars/angristan/hastebin.svg?maxAge=3600&style=flat-square)
+[Hastebin](https://github.com/seejohnrun/haste-server) is a simple
+pastebin, which can be installed on a protected network.
 
-[Hastebin](https://github.com/seejohnrun/haste-server) is an open-source pastebin software written in node.js.
+This dockerfile builds an image that can be configured using
+environment variables. This is done by writing `config.js` at runtime
+from interpolated variables in `app.sh`.
 
-This image is automatically built by [GitLab CI](https://gitlab.com/angristan/docker-hastebin/pipelines) and pushed to the [Docker Hub](https://hub.docker.com/r/angristan/hastebin/).
+See `app.sh` for variable names.
 
-Besides manual updates, the image is automatically rebuilt every week to make sure all softwares in the image are up-to-date.
+## Example use
 
-## Features
+> `STORAGE_TYPE` is set to `file` by default so you can quickly be up and running!
 
-- Based on Alpine Linux.
-- Latest code from [seejohnrun/haste-server](https://github.com/seejohnrun/haste-server)
-- Ran as an unprivileged user (see `UID` and `GID`)
-- Uses the default file storage driver (no expiration).
+Writing pastes to a mounted local volume:
 
-## Build-time variables
-
-- **`HASTEBIN_VER`**: A commit or a branch since the repo doesn't have tags (default: `master`)
-
-## Environment variables
-
-- **`GID`**: user id *(default: `4242`)*
-- **`UID`**: group id *(default: `4242`)*
-
-## Usage
-
-```sh
-docker run -d \
-  --name hastebin \
-  -p 80:7777 \
-  angristan/hastebin:latest
+```
+docker run --name hastebin -d -p 3001:7777 -e STORAGE_TYPE=file -v /data:/app/data rlister/hastebin
 ```
 
-As said above, the container will run as `4242:4242` by default, but you can specify the `UID` and `GID` yourself:
+Writing pastes to redis:
 
-```sh
-docker run -d \
-  --name hastebin \
-  -p 80:7777 \
-  -e UID=4242 \
-  -e GID=4242 \
-  angristan/hastebin:latest
+```
+docker run --name redis -d redis
+docker run --name hastebin -d -p 3001:7777 --link redis:redis -e STORAGE_TYPE=redis -e STORAGE_HOST=redis rlister/hastebin
 ```
 
-### Volume
+## Example docker-compose
 
-By default, the container will create a volume to store `/app/data`. This is where your pastes will be stored.
+Create an empty directory and create a `docker-compose.yml` file with
+the contents from the above link. Then run `docker-compose up -d`. It
+will create a folder in the directory called `data` which will be the
+persistent storage. You can then safely restart the containers and the
+data will be saved. To delete the persistent data - just remove/rename
+the directory and a new empty one will be created next time you spin
+up the containers.
 
-You can specify a volume yourself:
-
-```sh
-docker run -d \
-  --name hastebin \
-  --mount source=hastebin,target=/app/data \
-  -p 80:7777 \
-  -e UID=4242 \
-  -e GID=4242 \
-  angristan/hastebin:latest
 ```
-
-Or use a bind mount:
-
-```sh
-docker run -d \
-  --name hastebin \
-  --mount type=bind,source="$(pwd)"/data,target=/app/data \
-  -p 80:7777 \
-  -e UID=4242 \
-  -e GID=4242 \
-  angristan/hastebin:latest
-```
-
-### Docker Compose
-
-A `docker-compose.yml` example:
-
-```yml
-version: '2.3'
-
+version: "3"
 services:
   hastebin:
-    container_name: hastebin
-    image: angristan/hastebin:latest
-    restart: always
-    volumes:
-      - ./data:/app/data
-    ports:
-      - "80:7777"
+    image: rlister/hastebin
     environment:
-     - UID=4242
-     - GID=4242
+      STORAGE_TYPE: redis
+      STORAGE_HOST: hastebinredis
+    ports:
+     - "80:7777"
+  hastebinredis:
+    image: redis
+    volumes:
+      - ./data:/data
+entrypoint: redis-server --appendonly yes
 ```

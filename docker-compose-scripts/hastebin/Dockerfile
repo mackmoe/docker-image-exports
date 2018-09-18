@@ -1,25 +1,19 @@
-FROM node:8-alpine
+FROM node:6-alpine
 
-LABEL maintainer="angristan"
-LABEL source="https://github.com/angristan/docker-hastebin"
-
-ARG HASTEBIN_VER=master
-
-ENV UID=4242 GID=4242
+MAINTAINER Mo Nashington, mackmoe@3litedhome.net
 
 RUN apk -U upgrade \
-    && apk --no-cache add git su-exec \
-    && git clone https://github.com/seejohnrun/haste-server.git /app \
-    && cd /app \
-    && git checkout ${HASTEBIN_VER} \
-    && npm install
+    && apk add git
 
-COPY rootfs /
+ADD ./hastebin-server/  /app
+WORKDIR /app
+RUN npm install
 
-RUN chmod +x /usr/local/bin/run.sh
+ADD ./app.sh /app/
+RUN chmod 755 app.sh
 
-VOLUME /app/data
+EXPOSE 3001
 
-EXPOSE 7777
+ENV STORAGE_TYPE file
 
-CMD ["run.sh"]
+CMD [ "./app.sh" ]
